@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html  xmlns = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img th:src="@{image/a95a687a3638f466ad29.jpg}" th:alt="${message}">
+    <nav th:replace = "~{/layout/menu.html}"></nav>
+<h1 th:text = "${message}"></h1>
+<ul th:object = "${item}">
+    <li th:text = "${item.id}"></li>
+    <li th:text = "${item.name}"></li>
+    <li th:text = "${item.createDate}"></li>
+</ul>
+</body>
+</html>

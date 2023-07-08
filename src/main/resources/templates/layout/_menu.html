@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <nav th:fragment="navbar(active)">
+      <a th:href="@{/home/index}" th:text="#{nav.home}" th:style="${active==1} ? 'color:red' : 'color:blue'">Home</a>
+      <a th:href="@{/home/about}"  th:text="#{nav.about}" th:style="${active==2} ? 'color:red' : 'color:blue'">About</a>
+      <a th:href="@{/home/student-management}"  th:text="#{nav.student}" th:style="${active==3} ? 'color:red' : 'color:blue'">Students</a>
+      [<a href="?lang=vi">Vietnamese</a>]
+      [<a href="?lang=en">English</a>]
+  </nav>
+</body>
+</html>

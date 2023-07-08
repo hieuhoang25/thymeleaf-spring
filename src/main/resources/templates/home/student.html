@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>List of students</h1>
+  <ul >
+    <li th:each="sv, state : ${students}">
+      <a th:href="@{|/students?index=${state.index}|}" >[[${sv.name}]]</a>
+    </li>
+  </ul>
+  <h3>Student Details</h3>
+  <ul th:object="${student}">
+    <li>
+      <i>Name:</i> <b th:text="*{name}"></b>
+    </li>
+    <li>
+      <i>Marks:</i> <b th:text="*{marks}"></b>
+    </li>
+    <li>
+      <i>Gender:</i> <b th:text="*{gender} ? 'Male':'Female'"></b>
+    </li>
+    <li>
+      <i>Contact:</i> <b th:text="*{contact.email}"></b>
+    </li>
+    <li>
+      <i>Subject:</i>
+      <ul>
+        <li th:each="subject: *{subjects}">
+          <b>[[${subject}]]</b>
+        </li>
+      </ul>
+    </li>
+    <li th:switch="*{#arrays.length(subjects)}">
+      <i>Time: </i>
+      <b th:case="1">Mới vào</b>
+      <b th:case="2">Đang học</b>
+      <b th:case="*">Sắp ta trường</b>
+    </li>
+    <li th:if="*{marks >9}">
+      <i>
+        <b>Golden Bee</b>
+      </i>
+    </li>
+  </ul>
+</body>
+</html>

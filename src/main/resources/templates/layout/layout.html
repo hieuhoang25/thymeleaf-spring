@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org" th:fragment="dynamic(view, index)">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <header>
+        <img th:src="@{/image/a95a687a3638f466ad29.jpg}" alt="hello" style="width: 50px; height: 50px">
+    </header>
+    <hr>
+    <nav th:insert="~{/layout/_menu.html::navbar(${index})}">
+
+    </nav>
+    <main th:replace="${view}"></main>
+    <footer>Hicode &copy; 2023. All rights reserved </footer>
+</body>
+</html>

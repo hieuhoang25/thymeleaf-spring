@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{'/items?index='+${(index + 1 ) >= 4 ? 0 : index+1}} ">Next</a>
+<ul th:object="${item}">
+    <li th:text="*{id}"></li>
+    <li th:text="${item.name}"></li>
+    <li th:text="*{createDate}"></li>
+</ul>
+</body>
+</html>

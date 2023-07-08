@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h3>Result</h3>
+  <ul th:object="${student}">
+    <li>
+    Email Address: <i th:text="*{email}"></i>
+    </li>
+    <li>
+      Fullname : <i th:text="*{fullname}"></i>
+    </li>
+    <li>
+      Average Marks: <i th:text="*{marks}"></i>
+    </li>
+    <li>
+      Gender: <i th:text="*{gender} ? 'Male': 'Female'"></i>
+    </li>
+    <li>
+      Country : <i th:text="*{country}"></i>
+    </li>
+  </ul>
+
+</body>
+</html>
