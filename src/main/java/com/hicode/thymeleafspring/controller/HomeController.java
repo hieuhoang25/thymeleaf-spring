@@ -1,5 +1,6 @@
 package com.hicode.thymeleafspring.controller;
 
+import com.hicode.thymeleafspring.exception.UnauthorizedException;
 import com.hicode.thymeleafspring.model.Item;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,5 +18,9 @@ public class HomeController {
         model.addAttribute("message", "Welcome to My Page");
         model.addAttribute("item", item);
         return "home/index";
+    }
+    @RequestMapping("/unauthorizedException")
+    public String index(){
+       throw new UnauthorizedException();
     }
 }

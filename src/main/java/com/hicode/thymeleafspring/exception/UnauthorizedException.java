@@ -1,0 +1,9 @@
+package com.hicode.thymeleafspring.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(value= HttpStatus.UNAUTHORIZED, reason = "User not logged in")
+public class UnauthorizedException extends RuntimeException{
+    private static final long serialVersionUID = 1L;
+}
