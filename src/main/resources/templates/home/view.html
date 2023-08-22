@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h3>Trang chu</h3>
+<i>Day la trang chu</i>
+<p th:text="${error}"></p>
+<p th:text="${param.error}"></p>
+<script th:inline="javascript">
+  var popupMessage = /*[[${error}]]*/ '' /*[[${param.error}]]*/ ;
+  if (popupMessage) {
+    alert(popupMessage);
+  }
+</script>
+</body>
+</html>
